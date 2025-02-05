@@ -1,5 +1,5 @@
 === SmartSell Ranker ===
-Contributors: abhirup23
+Contributors: crescentek, abhirup23, nityasaha
 Requires at least: 6.3
 Tested up to: 6.7.1
 Requires PHP: 7.4

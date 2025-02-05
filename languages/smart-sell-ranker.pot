@@ -1,0 +1,286 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SmartSell Ranker\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-05 07:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.1\n"
+"X-Domain: smart-sell-ranker"
+
+#. %6$s: &nbsp;&raquo;</a>
+#: includes/CoreFunctions.php:14
+#, php-format
+msgid ""
+"%1$sWoocommerce Top Pick By Sale is inactive.%2$s The %3$sWooCommerce "
+"plugin%4$s must be active for the WooCommerce Top Picks to work. Please "
+"%5$sinstall & activate WooCommerce%6$s"
+msgstr ""
+
+#. %order_count% is the number of orders, and %day_count% is the number of days.
+#: includes/SettingFunctions.php:216
+msgid "%order_count% bought in past %day_count% days."
+msgstr ""
+
+#: classes/Emails/CronEmail.php:30
+msgid "Admin will get a notification email when top pick cron run"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Assign the top-selling products within a specified time frame to a chosen "
+"category."
+msgstr ""
+
+#: includes/SettingFunctions.php:167
+msgid "Avialable Shortcodes"
+msgstr ""
+
+#: includes/SettingFunctions.php:66
+msgid "Choose a Category as Top Sale"
+msgstr ""
+
+#: includes/SettingFunctions.php:68 includes/SettingFunctions.php:77 
+#: includes/SettingFunctions.php:117
+msgid "Choose options"
+msgstr ""
+
+#: includes/SettingFunctions.php:116
+msgid "Choose Order Statuses to Include in Order Item Count"
+msgstr ""
+
+#: includes/SettingFunctions.php:76
+msgid "Choose Ordering Periods for Item Searches and Sales Count"
+msgstr ""
+
+#: includes/SettingFunctions.php:75
+msgid "Choose Previous Ordering Periods"
+msgstr ""
+
+#: includes/SettingFunctions.php:59
+msgid "Configure Basic SmartSell Ranker Settings. "
+msgstr ""
+
+#. Author of the plugin
+msgid "Crescentek"
+msgstr ""
+
+#: classes/Emails/CronEmail.php:65
+msgid "Cron report"
+msgstr ""
+
+#. %order_count% is replaced with the number of orders, and %day_count% is replaced with the number of days.
+#: includes/SettingFunctions.php:161
+msgid ""
+"Customize the Massage to Show Recent Orders. Note: Use %order_count% as "
+"number of orders and %day_count% as days."
+msgstr ""
+
+#: includes/SettingFunctions.php:170
+msgid "Description"
+msgstr ""
+
+#: classes/Widgets/SmartSellRankerWidget.php:15
+msgid "Displays a list of top pick by sale products."
+msgstr ""
+
+#: includes/SettingFunctions.php:39
+msgid "Eight"
+msgstr ""
+
+#: includes/SettingFunctions.php:42
+msgid "Eleven"
+msgstr ""
+
+#: includes/SettingFunctions.php:36
+msgid "Five"
+msgstr ""
+
+#: includes/SettingFunctions.php:35
+msgid "Four"
+msgstr ""
+
+#: includes/SettingFunctions.php:124
+msgid "Frontend"
+msgstr ""
+
+#: includes/SettingFunctions.php:126
+msgid "Frontend Settings"
+msgstr ""
+
+#: includes/SettingFunctions.php:57
+msgid "General"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.crescentek.com/"
+msgstr ""
+
+#. %s: month name
+#: includes/SettingFunctions.php:50
+#, php-format
+msgid "Last %s Month"
+msgstr ""
+
+#: includes/SettingFunctions.php:100
+msgid "Max Assign Products"
+msgstr ""
+
+#: includes/SettingFunctions.php:101
+msgid "Maximum Products to be Assign in Selected Category.(Default: Not Set)"
+msgstr ""
+
+#: includes/SettingFunctions.php:107
+msgid ""
+"Minimum Quantity Required to Assign a Product in the Top Salling Category."
+"(Default: 0)"
+msgstr ""
+
+#: includes/SettingFunctions.php:40
+msgid "Nine"
+msgstr ""
+
+#: classes/Emails/CronEmail.php:29
+msgid "Notify admin"
+msgstr ""
+
+#: classes/Widgets/SmartSellRankerWidget.php:30
+msgid "Number of Products to Show"
+msgstr ""
+
+#: includes/SettingFunctions.php:32
+msgid "One"
+msgstr ""
+
+#: includes/SettingFunctions.php:158
+msgid "Order Count Text"
+msgstr ""
+
+#: includes/CoreFunctions.php:220
+msgid "Product Id"
+msgstr ""
+
+#: includes/CoreFunctions.php:221
+msgid "Product Name"
+msgstr ""
+
+#: includes/CoreFunctions.php:222
+msgid "Product SKU"
+msgstr ""
+
+#: includes/CoreFunctions.php:223
+msgid "Sales Count"
+msgstr ""
+
+#: includes/SettingFunctions.php:67
+msgid "Select a Category to Assign All Top Salling Products"
+msgstr ""
+
+#: includes/SettingFunctions.php:106
+msgid "Select Minimum Order Quantity of a Product"
+msgstr ""
+
+#: includes/SettingFunctions.php:115
+msgid "Select Order Status"
+msgstr ""
+
+#. parent slug
+#. page title
+#: admin/Settings.php:35 admin/Settings.php:36
+msgid "Settings"
+msgstr ""
+
+#: classes/SmartSellRanker.php:137
+msgid "Settings Saved"
+msgstr ""
+
+#: includes/SettingFunctions.php:38
+msgid "Seven"
+msgstr ""
+
+#: includes/SettingFunctions.php:169
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/SettingFunctions.php:175
+msgid "Show all top Salling products in a page"
+msgstr ""
+
+#: includes/SettingFunctions.php:132 includes/SettingFunctions.php:138
+msgid "Show Order Count in Single Product Page"
+msgstr ""
+
+#: includes/SettingFunctions.php:37
+msgid "Six"
+msgstr ""
+
+#. Name of the plugin
+#: admin/Settings.php:24 admin/Settings.php:25
+msgid "SmartSell Ranker"
+msgstr ""
+
+#: classes/Shortcode.php:105
+msgid "Sort by:"
+msgstr ""
+
+#: includes/SettingFunctions.php:146
+msgid "Specify the Duration for Order Item Sale (Days)"
+msgstr ""
+
+#: includes/SettingFunctions.php:147
+msgid ""
+"Specify the Duration for Order Item Sale To Show in Single Product Page."
+"(Default: 7 days)"
+msgstr ""
+
+#: includes/CoreFunctions.php:224
+msgid "Status"
+msgstr ""
+
+#: includes/SettingFunctions.php:41
+msgid "Ten"
+msgstr ""
+
+#: includes/SettingFunctions.php:34
+msgid "Three"
+msgstr ""
+
+#: classes/Widgets/SmartSellRankerWidget.php:22
+msgid "Title"
+msgstr ""
+
+#: classes/Widgets/SmartSellRankerWidget.php:17
+msgid "Top Pick By Sale Products"
+msgstr ""
+
+#: classes/Widgets/SmartSellRankerWidget.php:21
+msgid "Top Sale Products"
+msgstr ""
+
+#: includes/SettingFunctions.php:43
+msgid "Twelfth"
+msgstr ""
+
+#: includes/SettingFunctions.php:33
+msgid "Two"
+msgstr ""
+
+#: includes/SettingFunctions.php:83
+msgid "Unassign Previous Top Salling Products"
+msgstr ""
+
+#: includes/SettingFunctions.php:89
+msgid "Unassign Previous Top Salling Products From Selected Catagory"
+msgstr ""
+
+#: classes/Emails/CronEmail.php:75
+msgid "Welcome to {site_title}"
+msgstr ""
