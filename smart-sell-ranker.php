@@ -2,13 +2,13 @@
 /**
  * Plugin Name: SmartSell Ranker
  * Description: Assign the top-selling products within a specified time frame to a chosen category. 
- * Author: Crescentek
+ * Author: Outright Solutions
  * Version: 1.0.0
  * Requires at least: 4.4
  * Tested up to: 6.7.1
  * WC requires at least: 3.0
  * WC tested up to: 9.5.2
- * Author URI: https://www.crescentek.com/
+ * Author URI: https://outrightsolutions.net/
  * Text Domain: smart-sell-ranker
  * Domain Path: /languages/
  * License: GPLv3 or later
