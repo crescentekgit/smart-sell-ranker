@@ -20,7 +20,7 @@ class Shortcode {
         $category_id = ss_ranker_get_plugin_settings( 'top_sale_category' ) ? ss_ranker_get_plugin_settings( 'top_sale_category' )['value'] : '';
 		if ( $category_id ) {
 
-            if ( isset( $_GET['ss_ranker_orderby_nonce'] ) && ! wp_verify_nonce( wp_unslash( $_GET['ss_ranker_orderby_nonce'] ), 'smartsellranker_orderby' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            if ( isset( $_GET['ss_ranker_orderby_nonce'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['ss_ranker_orderby_nonce'] )), 'smartsellranker_orderby' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
                 wp_send_json_error( 'bad_nonce' );
                 wp_die();
             }

@@ -3,7 +3,7 @@
 if (!defined('ABSPATH'))
     exit;
 
-if ( ! class_exists( 'WC_Admin_Email_Cron_Update' ) ) :
+if ( ! class_exists( 'CronEmailUpdate' ) ) :
 
 /**
  *
@@ -62,7 +62,7 @@ class CronEmailUpdate extends WC_Email {
 	 * @return string
 	 */
 	public function get_default_subject() {
-		return apply_filters( 'top_pick_cron_admin_email_subject', __( 'Cron report', 'smart-sell-ranker' ), $this->object );
+		return apply_filters( 'top_pick_cron_admin_email_subject', __( 'Cron report SmartSell Ranker', 'smart-sell-ranker' ), $this->object );
 	}
 
 	/**

@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH'))
+    exit;
+
+
 if ( ! function_exists( 'ss_ranker_admin_tabs' ) ) {
     function ss_ranker_admin_tabs() {
         $default_massages = ss_ranker_default_massages();
