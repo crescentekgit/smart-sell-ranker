@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH'))
+    exit;
+
+
 if ( ! function_exists( 'woocommerce_inactive_notice' ) ) {
     function woocommerce_inactive_notice() {
         ?>
