@@ -3,7 +3,7 @@
 if (!defined('ABSPATH'))
     exit;
 
-if ( ! class_exists( 'CronEmailUpdate' ) ) :
+if ( ! class_exists( 'SSR_CronEmailUpdate' ) ) :
 
 /**
  *
@@ -12,7 +12,7 @@ if ( ! class_exists( 'CronEmailUpdate' ) ) :
  * @class 		WC_Admin_Email_Cron_Update
  * @extends 	WC_Email
  */
-class CronEmailUpdate extends WC_Email {
+class SSR_CronEmailUpdate extends WC_Email {
 
     public $attachments;
 
@@ -62,7 +62,7 @@ class CronEmailUpdate extends WC_Email {
 	 * @return string
 	 */
 	public function get_default_subject() {
-		return apply_filters( 'top_pick_cron_admin_email_subject', __( 'Cron report SmartSell Ranker', 'smart-sell-ranker' ), $this->object );
+		return apply_filters( 'ss_ranker_cron_admin_email_subject', __( 'Cron report SmartSell Ranker', 'smart-sell-ranker' ), $this->object );
 	}
 
 	/**
@@ -72,7 +72,7 @@ class CronEmailUpdate extends WC_Email {
 	 * @return string
 	 */
 	public function get_default_heading() {
-		return apply_filters( 'top_pick_cron_admin_email_heading', __( 'Welcome to {site_title}', 'smart-sell-ranker' ), $this->object );
+		return apply_filters( 'ss_ranker_cron_admin_email_heading', __( 'Welcome to {site_title}', 'smart-sell-ranker' ), $this->object );
 	}
 
 	/**
@@ -81,7 +81,7 @@ class CronEmailUpdate extends WC_Email {
      * @return string
      */
     public function get_attachments() {
-        return apply_filters( 'top_pick_cron_admin_email_attachments', $this->attachments, $this->id, $this->object );
+        return apply_filters( 'ss_ranker_cron_admin_email_attachments', $this->attachments, $this->id, $this->object );
     }
 
 	/**

@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
  * @package    smart-sell-ranker
  */
 
-class Settings {
+class SSR_Settings {
 
    public function __construct() {
       // Admin menu

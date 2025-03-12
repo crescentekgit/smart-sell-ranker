@@ -23,7 +23,7 @@ require_once 'includes/SettingFunctions.php';
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if ( ! Dependencies::woocommerce_plugin_active_check() ) {
-  add_action( 'admin_notices', 'woocommerce_inactive_notice' );
+  add_action( 'admin_notices', 'ss_ranker_woocommerce_inactive_notice' );
 }
 
 /**

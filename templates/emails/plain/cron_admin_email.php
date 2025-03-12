@@ -9,7 +9,7 @@ if (!defined('ABSPATH'))
  */
 
 
-echo esc_html__($email_heading) . "\n\n";
+ echo esc_html__( 'Cron report SmartSell Ranker', 'smart-sell-ranker' ) . "\n\n";
 
 echo sprintf( esc_html__( "Hi there!", 'smart-sell-ranker' ) ) . "\n\n";
 

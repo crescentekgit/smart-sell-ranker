@@ -110,9 +110,10 @@ class Template {
         if ( !$template )
             $template = $this->locate_template( array( "{$slug}.php", "{$this->template_url}{$slug}.php" ) );
 
-        echo $template;
-
-        if ( $template )
+        // Escape the template path before outputting
+        if ( $template ) {
+            echo esc_url( $template ); // Use esc_url() for URLs
             load_template( $template, false );
+        }
     }
 }

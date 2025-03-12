@@ -8,14 +8,14 @@ if (!defined('ABSPATH'))
  * @package		smart-sell-ranker
  */
 
-class Admin {
+class SSR_Admin {
 
 	public $settings;
 	
 	public function __construct() {
 		// load menu
         $this->load_class( 'Settings' );
-        $this->settings = new Settings();
+        $this->settings = new SSR_Settings();
 
         //load Script
         add_action( 'admin_enqueue_scripts', [ $this, 'ss_ranker_enqueue_admin_script' ] );

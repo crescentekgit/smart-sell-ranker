@@ -8,11 +8,11 @@ if (!defined('ABSPATH'))
  * @package		smart-sell-ranker
  */
 
-class Shortcode {
+class SSR_Shortcode {
 
 	public function __construct() {
 		// Register the shortcode
-		add_shortcode( 'ranker_products', [ $this, 'ss_ranker_products_shortcode' ] );
+		add_shortcode( 'ss_ranker_products', [ $this, 'ss_ranker_products_shortcode' ] );
 	}
 
     // Add custom WooCommerce product shortcode
@@ -20,7 +20,7 @@ class Shortcode {
         $category_id = ss_ranker_get_plugin_settings( 'top_sale_category' ) ? ss_ranker_get_plugin_settings( 'top_sale_category' )['value'] : '';
 		if ( $category_id ) {
 
-            if ( isset( $_GET['ss_ranker_orderby_nonce'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['ss_ranker_orderby_nonce'] )), 'smartsellranker_orderby' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            if ( isset( $_GET['ss_ranker_orderby_nonce'] ) && ! wp_verify_nonce( wp_unslash( $_GET['ss_ranker_orderby_nonce'] ), 'smartsellranker_orderby' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
                 wp_send_json_error( 'bad_nonce' );
                 wp_die();
             }

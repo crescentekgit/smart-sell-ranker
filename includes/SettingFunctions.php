@@ -1,8 +1,6 @@
 <?php
 
-if (!defined('ABSPATH'))
-    exit;
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( ! function_exists( 'ss_ranker_admin_tabs' ) ) {
     function ss_ranker_admin_tabs() {
@@ -176,7 +174,7 @@ if ( ! function_exists( 'ss_ranker_admin_tabs' ) ) {
                         ),
                         'options' => array(
                             array(
-                                'variable'=> "<code>[ranker_products]</code>",
+                                'variable'=> "<code>[ss_ranker_products]</code>",
                                 'description'=> __( 'Show all top Salling products in a page', 'smart-sell-ranker' ),
                             ),
                         ),
