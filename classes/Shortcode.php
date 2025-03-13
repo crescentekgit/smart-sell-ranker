@@ -8,11 +8,11 @@ if (!defined('ABSPATH'))
  * @package		smart-sell-ranker
  */
 
-class Shortcode {
+class SSR_Shortcode {
 
 	public function __construct() {
 		// Register the shortcode
-		add_shortcode( 'ranker_products', [ $this, 'ss_ranker_products_shortcode' ] );
+		add_shortcode( 'ss_ranker_products', [ $this, 'ss_ranker_products_shortcode' ] );
 	}
 
     // Add custom WooCommerce product shortcode

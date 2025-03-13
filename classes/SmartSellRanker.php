@@ -19,8 +19,12 @@ class SmartSellRanker {
     public $shortcode;
     public $frontend;
     private $file;
+    private $plugin_basename;
 
     public function __construct( $file ) {
+
+        $this->plugin_basename = plugin_basename( $file );
+
         $this->file = $file;
         $this->plugin_url = trailingslashit( plugins_url( '', $plugin = $file ) );
         $this->plugin_path = trailingslashit( dirname( $file ) );
@@ -42,22 +46,40 @@ class SmartSellRanker {
 
         if ( is_admin() ) {
             $this->load_class( 'Admin' );
-            $this->admin = new Admin();
+            $this->admin = new SSR_Admin();
         }
 
         if ( ! is_admin() || defined( 'DOING_AJAX' ) ) {
             $this->load_class( 'Frontend' );
-            $this->frontend = new Frontend();
+            $this->frontend = new SSR_Frontend();
 
             $this->load_class( 'Shortcode' );
-            $this->shortcode = new Shortcode();
+            $this->shortcode = new SSR_Shortcode();
         }
         $this->load_class( 'Template' );
-        $this->template = new Template();
+        $this->template = new SSR_Template();
 
         if ( current_user_can( 'manage_options' ) ) {
             add_action( 'rest_api_init', [ $this, 'smart_sell_ranker_rest_routes' ] );
         }
+
+        add_filter('plugin_action_links_' . $this->plugin_basename, array($this, 'setting_page_link'));
+        add_filter( 'plugin_row_meta', array( $this, 'addon_plugin_links' ), 10, 2 );
+    }
+
+    public function setting_page_link($links) {
+        // Add your custom links
+        $settings_link = '<a href="' . admin_url('admin.php?page=smart-sale-ranker-setting') . '">' . __('Settings', 'smart-sell-ranker') . '</a>';
+        array_unshift($links, $settings_link);
+        return $links;
+    }
+
+    public function addon_plugin_links( $links, $file ) {
+        if ( $file === $this->plugin_basename ) {
+            $links[] = __( 'Made with Love ❤️', 'smart-sell-ranker' );
+        }
+
+        return $links;
     }
 
     /**
@@ -67,7 +89,6 @@ class SmartSellRanker {
         $locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
         $locale = apply_filters( 'plugin_locale', $locale, 'smart-sell-ranker' );
         load_textdomain( 'smart-sell-ranker', WP_LANG_DIR . '/smart-sell-ranker/smart-sell-ranker-' . $locale . '.mo' );
-        load_plugin_textdomain( 'smart-sell-ranker', false, plugin_basename(dirname(dirname(__FILE__))) . '/languages' );
     }
 
     public function load_class( $class_name = '' ) {
@@ -93,7 +114,7 @@ class SmartSellRanker {
         update_option( 'SmartSellRanker_installed', 1 );
         // Init install
         $SmartSellRanker->load_class( 'Install' );
-        new Install();
+        new SSR_Install();
     }
 
     /**
@@ -141,7 +162,7 @@ class SmartSellRanker {
 
     public function smart_sell_ranker_mail( $emails ) {
         require_once( 'Emails/CronEmail.php' );
-        $emails['WC_Admin_Email_Cron_Update'] = new CronEmailUpdate();
+        $emails['WC_Admin_Email_Cron_Update'] = new SSR_CronEmailUpdate();
         return $emails;
     }
 

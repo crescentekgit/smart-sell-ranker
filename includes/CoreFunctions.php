@@ -1,6 +1,9 @@
 <?php
-if ( ! function_exists( 'woocommerce_inactive_notice' ) ) {
-    function woocommerce_inactive_notice() {
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+if ( ! function_exists( 'ss_ranker_woocommerce_inactive_notice' ) ) {
+    function ss_ranker_woocommerce_inactive_notice() {
         ?>
         <div id="message" class="error">
             <p><?php 
@@ -12,7 +15,7 @@ if ( ! function_exists( 'woocommerce_inactive_notice' ) ) {
                     /* translators: %5$s: <a href="' . admin_url( 'plugins.php' ) . '"> */
                     /* translators: %6$s: &nbsp;&raquo;</a> */
                     esc_html__(
-                        '%1$sWoocommerce Top Pick By Sale is inactive.%2$s The %3$sWooCommerce plugin%4$s must be active for the WooCommerce Top Picks to work. Please %5$sinstall & activate WooCommerce%6$s',
+                        '%1$sSmartSell Ranker is inactive.%2$s The %3$sWooCommerce plugin%4$s must be active for the SmartSell Ranker to work. Please %5$sinstall & activate WooCommerce%6$s',
                         'smart-sell-ranker'
                     ),
                     '<strong>',
@@ -179,6 +182,9 @@ if ( ! function_exists( 'ss_ranker_unassign_old_product_cat' ) ) {
 
 if ( ! function_exists( 'ss_ranker_export_assign_products_data' ) ) {
     function ss_ranker_export_assign_products_data( $products, $args, $status = null ) {
+
+        error_log('CSV function call');
+
         // Load WP_Filesystem
         if ( ! function_exists( 'request_filesystem_credentials' ) ) {
             require_once ABSPATH . 'wp-admin/includes/file.php';
@@ -224,31 +230,37 @@ if ( ! function_exists( 'ss_ranker_export_assign_products_data' ) ) {
                 'status'       => __( 'Status', 'smart-sell-ranker' ),
             );
 
+            // Escape headers for CSV
+            $escaped_headers = array_map( 'esc_html', $headers );
+            $csv_data = '"' . implode( '","', $escaped_headers ) . '"' . "\n";
+
             // Prepare product data
             foreach ( $products as $product_id ) {
                 $product = wc_get_product( $product_id );
                 $sales_count = get_post_meta( $product_id, 'ss_ranker_sales_count', true );
-                $export_data_index[] = array(
-                    'product_id'   => $product_id,
-                    'product_name' => $product->get_name(),
-                    'product_sku'  => $product->get_sku(),
-                    'sales_count'  => $sales_count,
-                    'status'       => $status ? $status : '-',
+
+                // Escape individual product data for CSV
+                $data_row = array(
+                    'product_id'   => esc_html( $product_id ),
+                    'product_name' => esc_html( $product->get_name() ),
+                    'product_sku'  => esc_html( $product->get_sku() ),
+                    'sales_count'  => esc_html( $sales_count ),
+                    'status'       => esc_html( $status ? $status : '-' ),
                 );
+
+                $csv_data .= '"' . implode( '","', $data_row ) . '"' . "\n";
             }
 
-            // Generate CSV content
-            $csv_data = implode( ',', $headers ) . "\n";
-            foreach ( $export_data_index as $data_row ) {
-                $csv_data .= implode( ',', $data_row ) . "\n";
-            }
+            error_log("CSV Data: " . print_r($csv_data, true));
 
             // Write to file using WP_Filesystem
             if ( $args['action'] === 'temp' && $file_path ) {
                 $wp_filesystem->put_contents( $file_path, $csv_data, FS_CHMOD_FILE );
+                error_log('file path ' . $file_path);
                 return $file_path; // Return the temp file path
             } else {
                 echo $csv_data; // Output CSV for download
+                error_log("CSV Data: " . print_r($csv_data, true));
                 die();
             }
         }
@@ -274,3 +286,4 @@ if ( ! function_exists( 'ss_ranker_get_settings_value' ) ) {
     }
 
 }
+

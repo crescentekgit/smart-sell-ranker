@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
  * @package		smart-sell-ranker
  */
 
-class Install {
+class SSR_Install {
 
 	public function __construct() {
 		if ( ! get_option( 'SmartSellRanker_cron_start' ) ) {
