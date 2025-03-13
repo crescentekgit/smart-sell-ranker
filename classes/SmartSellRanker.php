@@ -57,7 +57,7 @@ class SmartSellRanker {
             $this->shortcode = new SSR_Shortcode();
         }
         $this->load_class( 'Template' );
-        $this->template = new Template();
+        $this->template = new SSR_Template();
 
         if ( current_user_can( 'manage_options' ) ) {
             add_action( 'rest_api_init', [ $this, 'smart_sell_ranker_rest_routes' ] );

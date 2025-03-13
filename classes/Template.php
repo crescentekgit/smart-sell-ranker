@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
  * @package		smart-sell-ranker
  */
 
-class Template {
+class SSR_Template {
 
     public $template_url;
 
