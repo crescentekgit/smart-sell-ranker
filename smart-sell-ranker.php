@@ -14,15 +14,17 @@
  * License: GPLv3 or later
  */
 
-if ( ! class_exists( 'Dependencies' ) )
+ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+if ( ! class_exists( 'SSKR_Dependencies' ) )
 	require_once 'classes/Dependencies.php';
+
 
 require_once 'includes/CoreFunctions.php';
 require_once 'includes/SettingFunctions.php';
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! Dependencies::woocommerce_plugin_active_check() ) {
+if ( ! SSKR_Dependencies::woocommerce_plugin_active_check() ) {
   add_action( 'admin_notices', 'ss_ranker_woocommerce_inactive_notice' );
 }
 
@@ -40,7 +42,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
   );
 }
 
-if ( ! class_exists( 'SmartSellRanker' ) && Dependencies::woocommerce_plugin_active_check() ) {
+if ( ! class_exists( 'SmartSellRanker' ) && SSKR_Dependencies::woocommerce_plugin_active_check() ) {
     require_once('classes/SmartSellRanker.php');
     global $SmartSellRanker;
     $SmartSellRanker = new SmartSellRanker( __FILE__ );

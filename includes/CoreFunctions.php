@@ -183,7 +183,7 @@ if ( ! function_exists( 'ss_ranker_unassign_old_product_cat' ) ) {
 if ( ! function_exists( 'ss_ranker_export_assign_products_data' ) ) {
     function ss_ranker_export_assign_products_data( $products, $args, $status = null ) {
 
-        error_log('CSV function call');
+        
 
         // Load WP_Filesystem
         if ( ! function_exists( 'request_filesystem_credentials' ) ) {
@@ -251,16 +251,16 @@ if ( ! function_exists( 'ss_ranker_export_assign_products_data' ) ) {
                 $csv_data .= '"' . implode( '","', $data_row ) . '"' . "\n";
             }
 
-            error_log("CSV Data: " . print_r($csv_data, true));
+            
 
             // Write to file using WP_Filesystem
             if ( $args['action'] === 'temp' && $file_path ) {
                 $wp_filesystem->put_contents( $file_path, $csv_data, FS_CHMOD_FILE );
-                error_log('file path ' . $file_path);
+                
                 return $file_path; // Return the temp file path
             } else {
                 echo $csv_data; // Output CSV for download
-                error_log("CSV Data: " . print_r($csv_data, true));
+                
                 die();
             }
         }
