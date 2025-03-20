@@ -42,22 +42,21 @@ class SmartSellRanker {
      * initilize plugin on init
      */
     function init() {
-        $this->load_plugin_textdomain();
 
         if ( is_admin() ) {
             $this->load_class( 'Admin' );
-            $this->admin = new SSR_Admin();
+            $this->admin = new SSKR_Admin();
         }
 
         if ( ! is_admin() || defined( 'DOING_AJAX' ) ) {
             $this->load_class( 'Frontend' );
-            $this->frontend = new SSR_Frontend();
+            $this->frontend = new SSKR_Frontend();
 
             $this->load_class( 'Shortcode' );
-            $this->shortcode = new SSR_Shortcode();
+            $this->shortcode = new SSKR_Shortcode();
         }
         $this->load_class( 'Template' );
-        $this->template = new SSR_Template();
+        $this->template = new SSKR_Template();
 
         if ( current_user_can( 'manage_options' ) ) {
             add_action( 'rest_api_init', [ $this, 'smart_sell_ranker_rest_routes' ] );
@@ -82,14 +81,6 @@ class SmartSellRanker {
         return $links;
     }
 
-    /**
-     * Load Localisation files.
-     */
-    public function load_plugin_textdomain() {
-        $locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
-        $locale = apply_filters( 'plugin_locale', $locale, 'smart-sell-ranker' );
-        load_textdomain( 'smart-sell-ranker', WP_LANG_DIR . '/smart-sell-ranker/smart-sell-ranker-' . $locale . '.mo' );
-    }
 
     public function load_class( $class_name = '' ) {
         if ( '' != $class_name ) {
@@ -101,8 +92,8 @@ class SmartSellRanker {
      * Sets a constant preventing some caching plugins from caching a page. Used on dynamic pages
      */
     public function nocache() {
-        if ( ! defined( 'DONOTCACHEPAGE' ) )
-            define( "DONOTCACHEPAGE", "true" );
+        if ( ! defined( 'SSKR_DONOTCACHEPAGE' ) )
+            define( "SSKR_DONOTCACHEPAGE", "true" );
             // WP Super Cache constant
     }
 
@@ -114,7 +105,7 @@ class SmartSellRanker {
         update_option( 'SmartSellRanker_installed', 1 );
         // Init install
         $SmartSellRanker->load_class( 'Install' );
-        new SSR_Install();
+        new SSKR_Install();
     }
 
     /**
@@ -162,7 +153,7 @@ class SmartSellRanker {
 
     public function smart_sell_ranker_mail( $emails ) {
         require_once( 'Emails/CronEmail.php' );
-        $emails['WC_Admin_Email_Cron_Update'] = new SSR_CronEmailUpdate();
+        $emails['WC_Admin_Email_Cron_Update'] = new SSKR_CronEmailUpdate();
         return $emails;
     }
 

@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
  * @package		smart-sell-ranker
  */
 
-class SSR_Template {
+class SSKR_Template {
 
     public $template_url;
 
@@ -41,7 +41,7 @@ class SSR_Template {
      */
     public function locate_template( $template_name, $template_path = '', $default_path = '' ) {
         global $woocommerce, $SmartSellRanker;
-        $default_path = apply_filters( 'template_path', $default_path );
+        $default_path = apply_filters( 'ss_ranker_template_path', $default_path );
         if ( ! $template_path ) {
             $template_path = $this->template_url;
         }
@@ -73,7 +73,7 @@ class SSR_Template {
 
     public function store_locate_template( $template_name, $template_path = '', $default_path = '' ) {
         global $woocommerce, $SmartSellRanker;
-        $default_path = apply_filters( 'template_path', $default_path );
+        $default_path = apply_filters( 'ss_ranker_template_path', $default_path );
         if ( ! $template_path ) {
             $template_path = $this->template_url;
         }

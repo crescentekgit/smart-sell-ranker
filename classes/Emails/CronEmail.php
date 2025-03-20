@@ -3,7 +3,7 @@
 if (!defined('ABSPATH'))
     exit;
 
-if ( ! class_exists( 'SSR_CronEmailUpdate' ) ) :
+if ( ! class_exists( 'SSKR_CronEmailUpdate' ) ) :
 
 /**
  *
@@ -12,7 +12,7 @@ if ( ! class_exists( 'SSR_CronEmailUpdate' ) ) :
  * @class 		WC_Admin_Email_Cron_Update
  * @extends 	WC_Email
  */
-class SSR_CronEmailUpdate extends WC_Email {
+class SSKR_CronEmailUpdate extends WC_Email {
 
     public $attachments;
 

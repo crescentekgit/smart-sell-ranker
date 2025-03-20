@@ -12,13 +12,13 @@ class SmartSellRanker_Widget_Products extends WC_Widget {
 
     public function __construct() {
         $this->widget_cssclass = 'ss_ranker_widget_products';
-        $this->widget_description = __( 'Displays a list of top pick by sale products.', 'smart-sell-ranker' );
+        $this->widget_description = __( 'Displays a list of smartsell ranker products.', 'smart-sell-ranker' );
         $this->widget_id = 'ss_ranker_widget_products';
-        $this->widget_name = __( 'Top Pick By Sale Products', 'smart-sell-ranker' );
+        $this->widget_name = __( 'SmartSell Ranker Products', 'smart-sell-ranker' );
         $this->settings = array(
             'title' => array(
                 'type' => 'text',
-                'std' => __( 'Top Sale Products', 'smart-sell-ranker' ),
+                'std' => __( 'SmartSell Ranker Products', 'smart-sell-ranker' ),
                 'label' => __( 'Title', 'smart-sell-ranker' ),
             ),
             'number' => array(

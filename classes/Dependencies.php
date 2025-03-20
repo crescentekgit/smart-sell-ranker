@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
  * @package		smart-sell-ranker
  */
 
-class Dependencies {
+class SSKR_Dependencies {
 	private static $active_plugins;
 	static function init() {
 		self::$active_plugins = ( array ) get_option( 'active_plugins', array() );
