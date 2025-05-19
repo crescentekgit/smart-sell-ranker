@@ -1,7 +1,7 @@
 === SmartSell Ranker ===
 Contributors: crescentek, abhirup23, nityasaha
 Requires at least: 6.3
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv3

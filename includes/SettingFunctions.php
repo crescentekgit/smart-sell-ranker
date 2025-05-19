@@ -43,7 +43,7 @@ if ( ! function_exists( 'ss_ranker_admin_tabs' ) ) {
             9   => __( 'Nine', 'smart-sell-ranker' ),
             10  => __( 'Ten', 'smart-sell-ranker' ),
             11  => __( 'Eleven', 'smart-sell-ranker' ),
-            12  => __( 'Twelfth', 'smart-sell-ranker' )
+            12  => __( 'Twelve', 'smart-sell-ranker' )
         );
         //all order periods
         foreach ( $periods as $key => $value ) {
@@ -167,7 +167,7 @@ if ( ! function_exists( 'ss_ranker_admin_tabs' ) ) {
                     [
                         'key'       => 'avialable_shortcodes',
                         'type'      => 'table',
-                        'label'     => __( 'Avialable Shortcodes', 'smart-sell-ranker' ),
+                        'label'     => __( 'Available Shortcodes', 'smart-sell-ranker' ),
                         'label_options' =>  array(
                             __( 'Shortcodes', 'smart-sell-ranker' ),
                             __( 'Description', 'smart-sell-ranker' ),
@@ -175,7 +175,7 @@ if ( ! function_exists( 'ss_ranker_admin_tabs' ) ) {
                         'options' => array(
                             array(
                                 'variable'=> "<code>[ss_ranker_products]</code>",
-                                'description'=> __( 'Show all top Salling products in a page', 'smart-sell-ranker' ),
+                                'description'=> __( 'Show all top Selling products in a page', 'smart-sell-ranker' ),
                             ),
                         ),
                         'database_value' => '',

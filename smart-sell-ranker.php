@@ -4,8 +4,8 @@
  * Description: Assign the top-selling products within a specified time frame to a chosen category. 
  * Author: Outright Solutions
  * Version: 1.0.0
- * Requires at least: 4.4
- * Tested up to: 6.7
+ * Requires at least: 6.3
+ * Tested up to: 6.8
  * WC requires at least: 3.0
  * WC tested up to: 9.5.2
  * Author URI: https://outrightsolutions.net/
