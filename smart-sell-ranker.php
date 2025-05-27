@@ -7,7 +7,7 @@
  * Requires at least: 6.3
  * Tested up to: 6.8
  * WC requires at least: 3.0
- * WC tested up to: 9.5.2
+ * WC tested up to: 9.8.5
  * Author URI: https://outrightsolutions.net/
  * Text Domain: smart-sell-ranker
  * Domain Path: /languages/

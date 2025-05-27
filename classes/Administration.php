@@ -17,7 +17,7 @@ class SSKR_Admin {
         $this->load_class( 'Settings' );
         $this->settings = new SSKR_Settings();
 
-        //load Script
+        // load Script
         add_action( 'admin_enqueue_scripts', [ $this, 'ss_ranker_enqueue_admin_script' ] );
 	}
 
