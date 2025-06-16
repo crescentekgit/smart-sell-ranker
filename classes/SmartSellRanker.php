@@ -44,7 +44,7 @@ class SmartSellRanker {
     function init() {
 
         if ( is_admin() ) {
-            $this->load_class( 'Admin' );
+            $this->load_class( 'Administration' );
             $this->admin = new SSKR_Admin();
         }
 
@@ -103,8 +103,8 @@ class SmartSellRanker {
     public static function activate_SmartSellRanker() {
         global $SmartSellRanker;
         update_option( 'SmartSellRanker_installed', 1 );
-        // Init install
-        $SmartSellRanker->load_class( 'Install' );
+        // // Init install
+        $SmartSellRanker->load_class( 'Installation' );
         new SSKR_Install();
     }
 

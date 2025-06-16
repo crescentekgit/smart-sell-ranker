@@ -13,6 +13,12 @@
     margin-bottom: 20px;
 }
 
+select#sort-dropdown {
+    height: 50px;
+    width: 30%;
+    margin-left: 20px;
+}
+
 .ss-ranker-product-list > #sort-dropdown {
     margin-left: 10px;
     padding: 8px;
