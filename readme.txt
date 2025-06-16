@@ -23,7 +23,7 @@ Whether you're managing a seasonal campaign, a large inventory, or flash sales, 
 - Assign top sellers to a designated product category
 - Run updates on a 24-hour schedule using Cron jobs
 - Preserve existing product categories — no overwriting (as your choice)
-- Define your own timeframe for sales data (7, 15, 30 days, etc.)
+- Define your own timeframe for sales data
 - Fully compatible with WooCommerce themes and extensions
 - Lightweight and performance-optimized
 
